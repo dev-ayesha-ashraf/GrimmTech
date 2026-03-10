@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #1699db;
+  --color-brand-accent: #26ade8;
+  --color-brand-light: #d4f3fe;
+  --color-brand-dark: #083a6f;
+  --color-brand-darker: #031c4d;
+  --color-brand-white: #FFFFFF;
+  --color-brand-black: #111827;
+}
+
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideDown {
+  animation: slideDown 0.25s ease-out forwards;
+}
