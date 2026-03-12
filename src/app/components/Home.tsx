@@ -75,7 +75,7 @@ export default function PurposeHome() {
           <img
             src="./secure-transaction.png"
             alt="purpose_technologies illustration"
-            className="w-[500px] h-auto"
+            className="w-[550px] h-auto"
           />
         </div>
       </div>
