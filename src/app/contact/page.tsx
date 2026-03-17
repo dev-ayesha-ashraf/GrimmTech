@@ -3,7 +3,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Mail, Send } from "lucide-react";
+import { Mail, MapPin, Send } from "lucide-react";
 
 
 const Contact = () => {
@@ -74,6 +74,16 @@ const Contact = () => {
                 >
                   contact@grimm-technologies.com
                 </Link>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 p-5 bg-white/70 backdrop-blur-lg rounded-lg shadow hover:shadow-lg transition">
+              <MapPin className="w-6 h-6 text-brand-primary" />
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">Visit Us</h3>
+                <p className="text-brand-primary">
+                  15C, 5th Commercial Street, Zamzama Commercial, DHA Phase 5, Karachi
+                </p>
               </div>
             </div>
           </motion.div>
