@@ -274,6 +274,74 @@ footer{background:var(--navy);padding:72px 6% 28px;}
   .ptable{font-size:.8rem;}
   .ptable thead th,.ptable tbody td,.ptable tfoot td{padding:11px 14px;}
 }
+
+/* ── Transfyn documentation tabs ── */
+.transfyn-docs{margin-top:64px;border-top:1px solid rgba(255,255,255,.12);padding-top:52px;}
+.transfyn-docs-head{
+  font-size:.68rem;font-weight:600;color:var(--steel-l,#6b8fc4);
+  letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px;
+  display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;
+}
+.transfyn-docs-head::before{content:'◈';color:var(--steel-l,#6b8fc4);font-size:.7rem;}
+.tdoc-tabs{
+  display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.12);
+  margin-bottom:0;overflow-x:auto;
+}
+.tdoc-tab{
+  font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;
+  color:rgba(255,255,255,.38);letter-spacing:.03em;
+  padding:12px 24px;cursor:pointer;
+  border:none;background:transparent;
+  border-bottom:2px solid transparent;
+  transition:all .25s;white-space:nowrap;
+}
+.tdoc-tab:hover{color:rgba(255,255,255,.7);}
+.tdoc-tab.active{color:var(--steel-l,#6b8fc4);border-bottom-color:var(--steel-l,#6b8fc4);}
+.tdoc-panel{display:none;}
+.tdoc-panel.active{display:block;}
+.tdoc-content{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-top:none;
+  padding:36px 40px;
+  max-height:520px;overflow-y:auto;
+  border-radius:0 0 8px 8px;
+}
+.tdoc-content::-webkit-scrollbar{width:5px;}
+.tdoc-content::-webkit-scrollbar-track{background:transparent;}
+.tdoc-content::-webkit-scrollbar-thumb{background:rgba(107,143,196,.3);border-radius:3px;}
+.tdc-h1{
+  font-family:'Playfair Display',serif;font-size:1.5rem;
+  color:white;font-weight:700;letter-spacing:-.01em;
+  margin-bottom:20px;padding-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.tdc-h2{
+  font-family:'DM Sans',sans-serif;font-size:.8rem;
+  color:rgba(255,255,255,.7);font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  margin:22px 0 8px;
+}
+.tdc-p{font-size:.85rem;color:rgba(255,255,255,.42);line-height:1.85;margin-bottom:12px;font-weight:300;}
+.tdc-li{
+  font-size:.84rem;color:rgba(255,255,255,.42);line-height:1.8;
+  margin-bottom:8px;padding-left:18px;position:relative;
+}
+.tdc-li::before{content:'—';position:absolute;left:0;color:var(--steel-l,#6b8fc4);font-size:.72rem;top:2px;}
+.tdc-faq-q{
+  font-family:'Playfair Display',serif;font-size:.95rem;
+  color:rgba(255,255,255,.8);font-style:italic;
+  margin:20px 0 6px;display:flex;align-items:flex-start;gap:8px;
+}
+.tdc-faq-q::before{
+  content:'Q.';font-family:'DM Sans',sans-serif;font-style:normal;
+  color:var(--steel-l,#6b8fc4);flex-shrink:0;font-size:.72rem;
+  margin-top:4px;font-weight:700;letter-spacing:.06em;
+}
+.tdc-faq-a{font-size:.84rem;color:rgba(255,255,255,.42);line-height:1.85;margin-bottom:16px;padding-left:24px;font-weight:300;}
+.tdc-email{color:rgba(107,143,196,.9);font-weight:500;}
+.tdc-strong{color:rgba(255,255,255,.72);font-weight:600;}
+
 </style>
 </head>
 <body>
@@ -468,6 +536,119 @@ footer{background:var(--navy);padding:72px 6% 28px;}
       <div class="sf"><div class="sf-icon">📱</div><div class="sf-title">Mobile SDK</div><div class="sf-desc">Native iOS and Android SDKs for seamless in-app payment integration with minimal development effort.</div></div>
     </div>
   </div>
+
+  <div style="max-width:1240px;margin:0 auto;padding:0 5%;">
+
+<div class="transfyn-docs">
+  <div class="transfyn-docs-head">Documentation</div>
+  <div class="tdoc-tabs">
+    <button class="tdoc-tab active" onclick="showTdoc('faq',this)">FAQ</button>
+    <button class="tdoc-tab" onclick="showTdoc('privacy',this)">Privacy Policy</button>
+    <button class="tdoc-tab" onclick="showTdoc('terms',this)">Terms &amp; Conditions</button>
+    <button class="tdoc-tab" onclick="showTdoc('refund',this)">Refund Policy</button>
+  </div>
+
+  <!-- FAQ -->
+  <div class="tdoc-panel active" id="tdoc-faq">
+    <div class="tdoc-content">
+      <div class="tdc-h1">Frequently Asked Questions</div>
+      <div class="tdc-faq-q">How Does Transfyn Work?</div>
+      <div class="tdc-faq-a">Transfyn's all-in-one payment platform enables businesses to manage online payments and disbursements with ease. Through one integrated dashboard, companies can access a unified view of balances across collections and payouts, covering various regions and currencies. Our platform is built for flexibility, helping businesses gain full control of their financial operations. Our built-in authentication, identity verification, and fraud detection tools ensure a secure transaction environment, empowering businesses to confidently accept legitimate payments while minimizing risk.</div>
+      <div class="tdc-faq-q">Is Transfyn easy to integrate with?</div>
+      <div class="tdc-faq-a">Yes! Transfyn offers multiple integration options to suit different business needs. Our hosted payment pages enable businesses to collect payment information securely and redirect customers to a safe checkout experience. Integration is made easy with well-documented APIs, clear technical guidelines, and a comprehensive FAQ repository. Our dedicated support team is available to assist throughout the integration journey, making it simple and efficient for businesses to go live.</div>
+      <div class="tdc-faq-q">Which payment methods does Transfyn support?</div>
+      <div class="tdc-faq-a">Transfyn supports a wide range of payment methods including major card schemes, direct debits, vouchers, digital wallets, and bank transfers. We focus on localized and consumer-friendly solutions — whether through secure digital wallets, regional voucher systems, or traditional banking rails — for maximum flexibility and customer reach.</div>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <div class="tdoc-panel" id="tdoc-privacy">
+    <div class="tdoc-content">
+      <div class="tdc-h1">Privacy Policy</div>
+      <div class="tdc-p">This Privacy Policy outlines the principles and practices that Grimm Technologies (Private) Limited ("Company") adheres to in collecting, processing, using, disclosing, retaining, and managing personal data of our customers ("Users"). This policy does not cover external websites or services not under our ownership or control.</div>
+      <div class="tdc-h2">1. Definitions</div>
+      <div class="tdc-p">All capitalized terms shall have the meanings assigned in our Terms and Conditions.</div>
+      <div class="tdc-h2">2. Scope of Policy</div>
+      <div class="tdc-p">This Policy governs Personal Data handling across all departments of the Company. All employees and contractors must strictly follow this Policy to ensure data is managed consistently and securely.</div>
+      <div class="tdc-h2">3. What Personal Data We Collect</div>
+      <div class="tdc-li">Contact Information: Names, postal addresses, telephone numbers, email addresses.</div>
+      <div class="tdc-li">Financial Information: Payment card numbers, bank account details, transaction histories.</div>
+      <div class="tdc-li">Identification Data: CNIC, NTN, Passport numbers, driver's licence numbers.</div>
+      <div class="tdc-li">Biometric Data: Fingerprints, facial recognition data where applicable.</div>
+      <div class="tdc-li">Device and Usage Data: IP addresses, browser types, OS details, usage patterns.</div>
+      <div class="tdc-li">Transaction Data: Details of transactions conducted through our services.</div>
+      <div class="tdc-li">Communication Data: Records of interactions between Users and the Company.</div>
+      <div class="tdc-li">Geolocation Data: Location information when accessing the Digital Platform.</div>
+      <div class="tdc-li">KYC Data: Photographs, utility bills, and other regulatory verification documents.</div>
+      <div class="tdc-li">Fraud Detection Data: Patterns and indicators used to identify fraudulent activity.</div>
+      <div class="tdc-li">Third-Party Data: Information from credit bureaus and identity verification partners.</div>
+      <div class="tdc-h2">4. Collection, Use &amp; Disclosure</div>
+      <div class="tdc-p">Personal Data is collected for: Account Registration, User Relationship Management, Service Fulfillment, Legal Compliance, Contractual Obligations, Service Enhancement, and Communications (with explicit consent). Data may be disclosed to government authorities, legal advisers, service providers, and related corporate entities in compliance with applicable law.</div>
+      <div class="tdc-h2">5. Consent and Withdrawal</div>
+      <div class="tdc-p">Consent may be withdrawn by contacting <span class="tdc-email">support@grimm-technologies.com</span> or writing to: 15C, 5th Zamzama Commercial Lane, DHA Phase 5, Karachi, Sindh 74000. Withdrawal requests are processed within 30 working days.</div>
+      <div class="tdc-h2">7. International Data Transfers</div>
+      <div class="tdc-p">International transfers comply with GDPR, PIPEDA, CCPA, and applicable frameworks through standard contractual clauses ensuring equivalent data protection safeguards.</div>
+      <div class="tdc-h2">9. Retention and Disposal</div>
+      <div class="tdc-p">Data is retained as long as necessary for collection purposes or legal requirements. On expiry, data is securely deleted or anonymised with enhanced measures for sensitive data categories.</div>
+      <div class="tdc-h2">12. Cookie Policy</div>
+      <div class="tdc-p">We use Essential, Performance, Functional, and Advertising cookies. By using our platform, you consent to their use in accordance with this Policy.</div>
+      <div class="tdc-h2">Contact</div>
+      <div class="tdc-p">Email: <span class="tdc-email">support@grimm-technologies.com</span> &nbsp;|&nbsp; 15C, 5th Zamzama Commercial Lane, DHA Phase 5, Karachi, Sindh 74000</div>
+    </div>
+  </div>
+
+  <!-- TERMS & CONDITIONS -->
+  <div class="tdoc-panel" id="tdoc-terms">
+    <div class="tdoc-content">
+      <div class="tdc-h1">Terms &amp; Conditions</div>
+      <div class="tdc-h2">Acknowledgment and Acceptance</div>
+      <div class="tdc-p">By accessing and using this website provided by Grimm Technologies (Private) Limited, you acknowledge and agree to comply with these Terms. Continued use constitutes full acceptance. If you disagree with any part of these Terms, you must immediately stop using the Digital Platform.</div>
+      <div class="tdc-h2">Key Definitions</div>
+      <div class="tdc-li"><span class="tdc-strong">Company / We / Us:</span> Grimm Technologies (Private) Limited, its affiliates, subsidiaries, and related entities.</div>
+      <div class="tdc-li"><span class="tdc-strong">You / User:</span> Individual and/or corporate entity accessing this Digital Platform.</div>
+      <div class="tdc-li"><span class="tdc-strong">Digital Platform:</span> The Company's online interface offering B2B services via a contact support form. Does not facilitate direct user account creation.</div>
+      <div class="tdc-li"><span class="tdc-strong">Services:</span> All regulated digital and/or financial activities provided through the Digital Platform.</div>
+      <div class="tdc-li"><span class="tdc-strong">Personal Data:</span> Information that can directly or indirectly identify an individual, as detailed in the Privacy Policy.</div>
+      <div class="tdc-h2">Disclaimer</div>
+      <div class="tdc-p">This Digital Platform is provided "as is" for general informational purposes only. The Company disclaims all liability for errors, omissions, or consequences arising from use of this information. We strongly recommend consulting qualified professionals before making decisions based on information provided.</div>
+      <div class="tdc-h2">Use of Services</div>
+      <div class="tdc-p">Services are for informational and planning purposes only. Individuals must be at least 18 years old with full legal capacity. Businesses must ensure compliance with applicable laws of the governing jurisdiction.</div>
+      <div class="tdc-h2">Copyright &amp; Limited Authorisation</div>
+      <div class="tdc-p">All content is copyrighted by the Company. Users may access materials for non-commercial informational purposes only. All copies must include the Company's copyright notice. For infringement notices contact: <span class="tdc-email">support@grimm-technologies.com</span> or 15C, 5th Zamzama Commercial Lane, DHA Phase 5, Karachi.</div>
+      <div class="tdc-h2">Limitation of Liability</div>
+      <div class="tdc-p">The Company's liability is strictly limited to the monetary consideration paid for Services. The Company shall not be liable for indirect, special, incidental, consequential, or punitive damages regardless of prior notice of such possibilities.</div>
+      <div class="tdc-h2">Dispute Resolution</div>
+      <div class="tdc-p">If you have a concern or dispute, you agree to first try to resolve it informally by contacting the Company directly before pursuing formal proceedings.</div>
+      <div class="tdc-h2">Governing Law</div>
+      <div class="tdc-p">These Terms are governed by the laws of Pakistan. By using this Digital Platform, you consent to the jurisdiction of the courts of England and Wales for any disputes arising from use of the Platform.</div>
+      <div class="tdc-h2">Contact</div>
+      <div class="tdc-p">Head Office: 15C, 5th Zamzama Commercial Lane, DHA Phase 5, Karachi, Pakistan &nbsp;|&nbsp; <span class="tdc-email">support@grimm-technologies.com</span></div>
+    </div>
+  </div>
+
+  <!-- REFUND POLICY -->
+  <div class="tdoc-panel" id="tdoc-refund">
+    <div class="tdoc-content">
+      <div class="tdc-h1">Refund Policy</div>
+      <div class="tdc-h2">Overview</div>
+      <div class="tdc-p">At Grimm Technologies (Private) Limited, our goal is to establish a reliable and secure platform for our customers. We strive to ensure complete customer satisfaction. Due to the nature of our services, refunds or credit provisions are generally not provided unless explicitly stated in Service Agreements. However, we do offer refunds per the conditions below.</div>
+      <div class="tdc-h2">Refund Eligibility</div>
+      <div class="tdc-li">Customers must request a refund within <span class="tdc-strong">fourteen (14) days</span> of availing any service. Requests beyond this period are not eligible.</div>
+      <div class="tdc-li">Company officers will verify actual delivery of services and confirm that quality was not improved despite persistent requests, before processing any refund.</div>
+      <div class="tdc-li">No refunds will be issued for services outside the specified 14-day period.</div>
+      <div class="tdc-h2">How to Request a Refund</div>
+      <div class="tdc-p">Write to <span class="tdc-email">support@grimm-technologies.com</span> with your refund request and all necessary details to expedite processing.</div>
+      <div class="tdc-h2">Limitation of Liability</div>
+      <div class="tdc-p">Refunds are limited to the cost of actual services purchased and do not include indirect or consequential damages. Issued to the original payment method used at time of purchase.</div>
+      <div class="tdc-h2">Policy Changes</div>
+      <div class="tdc-p">The Company may modify this policy at any time, effective immediately upon posting. Continued use of our services constitutes acceptance of any revisions to this policy.</div>
+      <div class="tdc-h2">Contact</div>
+      <div class="tdc-p">For refund queries: <span class="tdc-email">support@grimm-technologies.com</span></div>
+    </div>
+  </div>
+</div>
+
+  </div>
 </section>
 <div class="diag-divider-bottom"></div>
 
@@ -600,6 +781,16 @@ footer{background:var(--navy);padding:72px 6% 28px;}
 </footer>
 
 <script>
+
+/* TRANSFYN DOC TABS */
+function showTdoc(tab,btn){
+  const container = btn.closest('.transfyn-docs');
+  container.querySelectorAll('.tdoc-panel').forEach(p=>p.classList.remove('active'));
+  container.querySelectorAll('.tdoc-tab').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tdoc-'+tab).classList.add('active');
+  btn.classList.add('active');
+}
+
 window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>30);});
 function showTab(t,b){document.querySelectorAll('.pricing-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.pt').forEach(x=>x.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');b.classList.add('active');}
 function toggleFaq(el){const o=el.classList.contains('open');document.querySelectorAll('.faq-q.open').forEach(q=>{q.classList.remove('open');q.nextElementSibling.classList.remove('open');});if(!o){el.classList.add('open');el.nextElementSibling.classList.add('open');}}
